@@ -1,0 +1,13 @@
+
+.banner-container {
+    
+    height: 70vh; 
+  }
+  
+
+@media (max-width: 767px) {
+    .banner-container {
+      height: 30vh; /* Adjusted height for mobile screens */
+    }
+  }
+  
