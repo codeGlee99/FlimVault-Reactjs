@@ -6,12 +6,12 @@ function Movies() {
 
   const[Movies,setMovies] = useState([]);
 
-  const url = "https://dummyapi.online/api/movies";
+  const url = "https://fakestoreapi.com/products";
 
   useEffect(()=>{
     axios.get(`${url}`).then(
       function(res){
-      //  console.log(res.data)
+   
        setMovies(res.data)
       }
     )
@@ -20,15 +20,16 @@ function Movies() {
   return (
     <div>
     <div className='flex justify-center m-5 text-2xl font-bold'>
-      Trending Movies
+      TOP TRENDING ARRIVALS 
     </div>
-    <div className='flex  flex-row flex-wrap  justify-around gap-3'>
+    <div className='flex  flex-row flex-wrap  justify-around '>
       {
-        Movies.map((movies) =>{
-          // console.log(movies.image,"imkdjf")
-          return <MoviesCard key={movies.id} path={`${url}/${movies.image}`} name={movies.movie}/>
+        Movies.map((items) =>{
+        
+          return <MoviesCard key={items.id} path={items.image} name={items.title} price={items.price}/>
         })
       }
+    
           
     </div>
     </div>
