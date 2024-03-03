@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MoviesCard from './MoviesCard'
 import axios from "axios";
 
-function Movies() {
+function Movies({handleWatchList, handleRemoveWatchList,watchlist}) {
 
   const[Movies,setMovies] = useState([]);
 
@@ -26,7 +26,16 @@ function Movies() {
       {
         Movies.map((items) =>{
         
-          return <MoviesCard key={items.id} path={items.image} name={items.title} price={items.price}/>
+          return <MoviesCard 
+           dataObj={items}
+           key={items.id} 
+           path={items.image} 
+           name={items.title} 
+           price={items.price} 
+           handleWatchList={handleWatchList}
+           handleRemoveWatchList={handleRemoveWatchList}
+           watchlist={watchlist}
+           />
         })
       }
     
