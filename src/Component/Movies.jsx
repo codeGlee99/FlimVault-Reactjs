@@ -34,7 +34,7 @@ function Movies({handleWatchList, handleRemoveWatchList,watchlist}) {
            price={items.price} 
            handleWatchList={handleWatchList}
            handleRemoveWatchList={handleRemoveWatchList}
-           watchlist={watchlist}
+           watchlist={watchlist} 
            />
         })
       }
