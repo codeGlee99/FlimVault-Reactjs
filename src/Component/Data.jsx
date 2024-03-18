@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import MoviesCard from './MoviesCard'
+import DatasCard from "./DatasCard";
 import axios from "axios";
 
-function Movies({handleWatchList, handleRemoveWatchList,watchlist}) {
+function Data({handleWatchList, handleRemoveWatchList,watchlist}) {
 
-  const[Movies,setMovies] = useState([]);
+  const[Data,setData] = useState([]);
 
   const url = "https://fakestoreapi.com/products";
 
@@ -12,7 +12,7 @@ function Movies({handleWatchList, handleRemoveWatchList,watchlist}) {
     axios.get(`${url}`).then(
       function(res){
    
-       setMovies(res.data)
+       setData(res.data)
       }
     )
   },[])
@@ -24,9 +24,9 @@ function Movies({handleWatchList, handleRemoveWatchList,watchlist}) {
     </div>
     <div className='flex  flex-row flex-wrap  justify-around '>
       {
-        Movies.map((items) =>{
+        Data.map((items) =>{
         
-          return <MoviesCard 
+          return <DatasCard 
            dataObj={items}
            key={items.id} 
            path={items.image} 
@@ -45,4 +45,4 @@ function Movies({handleWatchList, handleRemoveWatchList,watchlist}) {
   )
 }
 
-export default Movies
+export default Data

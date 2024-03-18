@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 function WatchList({ watchlist }) {
 
   const[ search,setSearch] = useState('');
@@ -38,9 +39,14 @@ function WatchList({ watchlist }) {
           <thead className="border-b-2">
             <tr>
               <th>Name</th>
-              <th>Rating</th>
-              <th>Popularity</th>
-              <th>Gener</th>
+              <th>
+                Price 
+                <FontAwesomeIcon icon="fa-brands fa-react" />
+
+                </th>
+              <th>Category</th>
+              <th></th>
+            
             </tr>
           </thead>
           <tbody>
@@ -50,11 +56,14 @@ function WatchList({ watchlist }) {
             .map((dataObj, index) => {
               return <tr className="border-b-2" key={index}>
                     <td className="flex items-center px-6 py-4">
-                      <img src={dataObj.image} className="h-[6rem] w-[10rem]" />
+                      <img src={dataObj.image} className="h-[6rem] w-[6rem]" />
                       <div className="mx-10"> {dataObj.title}</div>
                     </td>
-                    <td>8.5</td>
-                    <td>9</td>
+                    <td>
+                      
+                      ${dataObj.price}
+                      </td>
+                    <td>{dataObj.category}</td>
                     <td>Action</td>
                     <td className="text-red-800">Delete</td>
                   </tr> 

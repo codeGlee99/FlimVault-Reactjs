@@ -1,5 +1,5 @@
 import "./App.css";
-import Movies from "./Component/Movies";
+import Data from "./Component/Data"
 import Navbar from "./Component/Navbar";
 import {
   BrowserRouter,
@@ -49,7 +49,7 @@ function App() {
           element={
             <>
               <Banner />
-              <Movies
+              <Data
                 handleWatchList={handleWatchList}
                 handleRemoveWatchList={handleRemoveWatchList}
                 watchlist={watchlist}
